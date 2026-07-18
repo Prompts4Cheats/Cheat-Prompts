@@ -1,130 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompts4Cheats</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudioX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#08080c;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+background:#7b2cff;
+filter:blur(250px);
+opacity:.18;
+top:-250px;
+left:-200px;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:#5b19ff;
+filter:blur(220px);
+opacity:.15;
+bottom:-250px;
+right:-150px;
+z-index:-1;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+position:sticky;
+top:0;
+backdrop-filter:blur(12px);
+background:rgba(10,10,15,.6);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+font-family:Orbitron;
+font-size:2rem;
+font-weight:700;
+}
+
+.logo span{
+color:#9b5cff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#9b5cff;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:Orbitron;
+font-size:4rem;
+}
+
+.hero span{
+color:#9b5cff;
+}
+
+.hero p{
+margin:20px auto;
+max-width:650px;
+color:#cfcfcf;
+line-height:1.7;
+}
+
+.btn{
+display:inline-block;
+padding:16px 38px;
+border-radius:40px;
+background:#7b2cff;
+text-decoration:none;
+color:white;
+font-weight:bold;
+box-shadow:0 0 30px #7b2cff88;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 45px #7b2cff;
+}
+
+section{
+padding:90px 10%;
+}
+
+.title{
+font-family:Orbitron;
+font-size:2.2rem;
+margin-bottom:40px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#13131d;
+padding:35px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.05);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#7b2cff;
+box-shadow:0 0 35px rgba(123,44,255,.25);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#b27cff;
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#888;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.discord{
+text-align:center;
+}
+
+.discord a{
+margin-top:20px;
+display:inline-block;
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+nav ul{
+gap:15px;
+}
+
+}
+</style>
 </head>
-<body class="bg-[#0d1117] text-[#c9d1d9] font-sans selection:bg-teal-500 selection:text-black">
 
-    <!-- Navigation -->
-    <nav class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center border-b border-gray-800">
-        <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-teal-400 transition">Prompts4Cheats</a>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="#projects" class="hover:text-white transition">Projects</a>
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="#contact" class="hover:text-white transition-colors bg-teal-600 hover:bg-teal-500 text-black px-4 py-2 rounded-md">Contact</a>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <header class="max-w-3xl mx-auto px-6 py-24 text-center md:text-left">
-        <p class="text-teal-400 font-mono text-sm mb-3">// Hello World, we are</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
-            Prompts4Cheats.
-        </h1>
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-400 mb-6">
-            We build sleek, high-performance web applications.
-        </h2>
-        <p class="text-gray-400 text-lg max-w-xl mb-8 leading-relaxed">
-            We specialize in frontend design, smart prompts, and clean architectures. Welcome to our digital space.
-        </p>
-        <div class="flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="#projects" class="bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">View Our Work</a>
-            <a href="https://github.com" target="_blank" class="border border-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 transition">GitHub Profile</a>
-        </div>
-    </header>
+<nav>
+<div class="logo">Studio<span>X</span></div>
 
-    <!-- Projects Grid -->
-    <section id="projects" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800">
-        <h2 class="text-2xl font-bold text-white mb-10 flex items-center gap-2">
-            <span class="text-teal-400 font-mono text-lg">01.</span> Featured Projects
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Project Card 1 -->
-            <div class="bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-3xl">📁</span>
-                        <a href="#" class="text-gray-400 hover:text-teal-400 text-xl">🔗</a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 hover:text-teal-400 transition cursor-pointer">E-Commerce Platform</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                        A full-stack online store featuring real-time inventory tracking, Stripe payments, and a custom dashboard.
-                    </p>
-                </div>
-                <div class="flex gap-3 text-xs font-mono text-gray-500">
-                    <span>React</span>
-                    <span>Tailwind</span>
-                    <span>Node.js</span>
-                </div>
-            </div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#discord">Discord</a></li>
+</ul>
+</nav>
 
-            <!-- Project Card 2 -->
-            <div class="bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-3xl">📁</span>
-                        <a href="#" class="text-gray-400 hover:text-teal-400 text-xl">🔗</a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 hover:text-teal-400 transition cursor-pointer">Task Analytics Dashboard</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                        A clean visualization tool mapping team productivity with interactive D3.js timelines and charts.
-                    </p>
-                </div>
-                <div class="flex gap-3 text-xs font-mono text-gray-500">
-                    <span>TypeScript</span>
-                    <span>D3.js</span>
-                    <span>HTML5</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
 
-    <!-- About Me Section -->
-    <section id="about" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800">
-        <div class="grid md:grid-cols-3 gap-10 items-center">
-            <div class="md:col-span-2">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                    <span class="text-teal-400 font-mono text-lg">02.</span> About Us
-                </h2>
-                <p class="text-gray-400 leading-relaxed mb-4">
-                    We love translating complex problems into beautiful, intuitive interfaces. Our engineering focus centers around modular coding practices and optimization.
-                </p>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    Here are a few technologies we've been working with recently:
-                </p>
-                <ul class="grid grid-cols-2 gap-2 font-mono text-sm text-gray-400">
-                    <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> JavaScript (ES6+)</li>
-                    <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Tailwind CSS</li>
-                    <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Git & GitHub</li>
-                    <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Responsive Design</li>
-                </ul>
-            </div>
-            <!-- Decorative Box or Avatar placeholder -->
-            <div class="mx-auto w-48 h-48 rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-800 opacity-80 shadow-lg"></div>
-        </div>
-    </section>
+<div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-xl mx-auto px-6 py-24 text-center">
-        <h2 class="text-teal-400 font-mono text-sm mb-3">03. What's Next?</h2>
-        <h3 class="text-4xl font-bold text-white mb-4">Get In Touch</h3>
-        <p class="text-gray-400 mb-8 leading-relaxed">
-            We are currently looking for new opportunities and collaborations. Drop a message or just say hello!
-        </p>
-        <a href="mailto:youremail@example.com" class="inline-block border border-teal-400 text-teal-400 font-semibold px-8 py-4 rounded-lg hover:bg-teal-400/10 transition">
-            Say Hello
-        </a>
-    </section>
+<h1>Welcome to Studio<span>X</span></h1>
 
-    <!-- Footer -->
-    <footer class="text-center py-8 border-t border-gray-900 text-xs font-mono text-gray-600">
-        <p>Designed & Built by Prompts4Cheats &copy; 2026</p>
-    </footer>
+<p>
+A community for Roblox creators who enjoy building, learning, and sharing open projects. Join us to collaborate, improve your skills, and explore new creations.
+</p>
+
+<a class="btn" href="#discord">Join Us</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About StudioX</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Community</h3>
+<p>Meet builders, scripters, and creators who enjoy making Roblox experiences together.</p>
+</div>
+
+<div class="card">
+<h3>Resources</h3>
+<p>Discover tutorials, project showcases, and helpful development resources.</p>
+</div>
+
+<div class="card">
+<h3>Support</h3>
+<p>Ask questions, share ideas, and get feedback from other community members.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="title">Features</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Project Showcase</h3>
+<p>Share your latest Roblox creations.</p>
+</div>
+
+<div class="card">
+<h3>Development Help</h3>
+<p>Learn scripting, building, and UI design.</p>
+</div>
+
+<div class="card">
+<h3>Friendly Community</h3>
+<p>Collaborate with other Roblox developers.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="discord" class="discord">
+
+<h2 class="title">Join StudioX</h2>
+
+<p>Become part of our growing community.</p>
+
+<br>
+
+<a class="btn" href="https://discord.gg/nx2kxFzBua">Discord Server</a>
+
+</section>
+
+<footer>
+
+© 2026 StudioX • Built with 💜
+
+</footer>
 
 </body>
 </html>
